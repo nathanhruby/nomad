@@ -10110,3 +10110,16 @@ type ACLTokenUpsertResponse struct {
 	Tokens []*ACLToken
 	WriteMeta
 }
+
+type SnapshotSaveRequest struct {
+	QueryOptions
+}
+
+type SnapshotSaveResponse struct {
+	SnapshotChecksum string
+
+	ErrorCode int    `codec:",omitempty"`
+	ErrorMsg  string `codec:",omitempty"`
+
+	QueryMeta
+}
